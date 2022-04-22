@@ -1,0 +1,23 @@
+:root {
+  --app-gray: #F3F5FC;
+  --title-gray: #343A40; 
+  --blue: #0A3871;
+  --gray: #495057;
+  --btn-gray: #D8DFE8;
+  --white: #FFFFFF;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #E5E5E5;
+}
