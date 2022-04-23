@@ -98,20 +98,51 @@ small {
 
 @media only screen and (min-width: 1440px) {
   main {
-    display: grid;
-    grid-template-columns: 3.109rem 68rem 40rem; 
-    grid-template-areas: "header aside" "form aside";
+    display: flex;
+    flex-flow: row wrap;
+    padding: 4rem;
+    max-width: 144rem;
+    max-height: 100vh;
+    /* display: grid; */
+    /* grid-template-columns: 3.109rem 68rem 40rem;  */
+    /* grid-template-areas: "header aside" "form aside"; */
   }
 
   header {
-    grid-area: header;
+    /* max-width: 4rem; */
+    margin: 0 12.491rem 0 8.4rem ;
   }
 
   form {
-    grid-area: form;
+    max-width: 68rem;
+    height: 81.6rem;
+    margin-top: 16.8rem;
+  }
+
+  textarea {
+    max-height: 68.4rem;
+  }
+
+  .buttons {
+    width: 68rem;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  button {
+    width: 32.8rem;
   }
 
   .output {
-    grid-area: aside;
+    max-width: 40rem;
+    max-height: 94.4rem;
+    /* margin-left: 8rem; */
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .img-output {
+    display: inline-block;
+    margin: 24.3rem 0 3.2rem;
   }
 }
