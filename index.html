@@ -8,27 +8,31 @@
   <link rel="stylesheet" href="./style/main.css">
   <script src="./js/main.js" defer></script>
 </head>
+
 <body>
-  <main class="container">
+  <main>
     <header>
       <img src="./assets/img/alura-icon.png" alt="Ícone "a" da Alura">
     </header>
-    <aside class="input">
+
+    <!-- <aside class="input"> -->
       <form>
-        <textarea name="text" id="text" cols="30" rows="10" placeholder="Digite seu texto" autofocus></textarea>
+        <textarea name="text" id="text" placeholder="Digite seu texto" autofocus></textarea>
+        
         <div class="small">
           <img src="./assets/img/exclamation-icon.png" alt="Ícone de exclamação">
           <small>Apenas letras minúsculas e sem acento.</small>
         </div>
+
         <div class="buttons">
           <button id="btn-criptografar" class="btn-blue">Criptografar</button>
           <button id="btn-descriptografar" class="btn-white">Descriptografar</button>
         </div>
       </form>
-    </aside>
+    <!-- </aside> -->
     
     <asaide class="output">
-      <img src="./assets/img/High-quality-products.png" alt="Ilustração, pessoa com uma lupa olhando para um diamante">
+      <img class="img-output" src="./assets/img/High-quality-products.png" alt="Ilustração, pessoa com uma lupa olhando para um diamante">
       <h1>Nenhuma mensagem encontrada</h1>
       <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
 

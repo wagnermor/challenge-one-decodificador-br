@@ -7,6 +7,10 @@
   --white: #FFFFFF;
 }
 
+* {
+  font-family: sans-serif;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -20,4 +24,22 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   background-color: #E5E5E5;
+}
+
+button {
+  border: 1px solid var(--blue);
+  border-radius: 1.5rem;
+  width: 343px;
+  height: 67px;
+  font-size: 1.6rem;
+}
+
+.btn-blue{
+  background-color:var(--blue);
+  color: var(--white);
+}
+
+.btn-white{
+  background-color:var(--app-gray);
+  color: var(--blue);
 }

@@ -1,220 +1,117 @@
 @import url('./common.css');
 
-.container {
-  margin: 0 auto;
-  max-width: 1440px;
-  max-height: 1024px;
-  padding: 40px 40px 40px 84px;
+main {
   background-color: var(--app-gray);
-  display: flex;
+  height: 100vh;
+  padding: 24px 16px;
 }
 
-.input {
-  max-width: 52.25rem;
-  background-color: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 100% ;
-  grid-template-areas: "header form";
+header {
+  margin-bottom: 80px;
 }
 
-.input header {
-  /* background-color: orange; */
-  width: 31.9px;
-  grid-area: header;
-}
-
-.input form {
-  margin-top: 5rem;
-  grid-area: form;
-}
-
-.input textarea {
-  /* grid-area: area; */
+textarea {
   width: 100%;
-  height: 42.6875rem;
-  border: none;
-  font-family: sans-serif;
-  font-size: 2rem;
-  background-color: -internal-light-dark(var(--app-gray));
-}
-
-.input textarea::placeholder {
+  height: 252px;
+  outline: none;
+  border: 0 none;
+  background-color: var(--app-black);
+  box-shadow: none;
   color: var(--blue);
-
+  font-size: 3.2rem;
 }
 
-.input small {
-  font-size: .75rem;
-  font-family: sans-serif;
-  margin-left: .5rem;
-  opacity: .8;
-}
-
-.input div {
-  display: flex;
-  align-items: center;
-}
-
-.small {
-  display: flex;
-  align-items: center;
-}
-
-div.buttons {
-  margin: 16px 0 32px 0;
-}
-
-.input button {
-  display: flex;
-  align-items: center;
-  width: 20.5rem;
-  height: 4.1875rem;
-  border-radius: 1.5rem;
-}
-
-.btn-blue {
-  border: 1px solid var(--blue);
-  background-color: var(--blue);
-  color: var(--white);
-  margin-right: 24px;
-  font-size: 1rem;
-}
-
-.btn-white {
-  border: 1px solid var(--blue);
-  background-color: var(--btn-gray);
+textarea::placeholder {
   color: var(--blue);
-  margin-right: 24px;
-  font-size: 1rem;
+}
+
+.small, .buttons, .output {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+small {
+  font-weight: 400;
+  font-size: 1.2rem;
+  opacity: .8;;
+}
+
+.buttons {
+  margin: 1.6rem 0 6.4rem;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 
 .output {
-  max-width: 25rem;
-  padding: 15.1875rem 2rem 0 2rem;
-  border-radius: 2rem;
-  grid-area: output;
+  margin: 0 auto;
+  max-width: 327px;
+  max-height: 18.6rem;
   background-color: var(--white);
+  padding: 3.2rem;
+  border-radius: 3.2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
   text-align: center;
-}
-.output img {
-  width: 84%;
-  /* height: ; */
 }
 
 .output h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  /* line-height: 1.8rem; */
+  margin: 0;
+  font-size: 2.4rem;
   color: var(--title-gray);
 }
 
 .output p {
-  font-family: sans-serif;
-  font-size: 1rem;
+  margin: 0;
+  font-size: 1.6rem;
+  line-height: 150%;
   color: var(--gray);
-
 }
 
-footer {
-  background-color: pink;
+.img-output {
+  display: none;
 }
 
-@media (max-width: 768px){
-  .container {
-    flex-direction: column;
-    height: 100vh;
-    padding: 73.42px 40px 40px;
-  }
-  
-  .input {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100% ;
-    grid-template-areas: "form form";
+@media only screen and (min-width: 768px) {
+  main {
+    padding: 7.342rem 4rem 4rem;
   }
 
-  .container form {
-    width: 100%;
-    margin-top: 120.21px;
+  header {
+    margin-bottom: 12.021rem;
   }
 
-  .input textarea {
-    height: 596px;
-  }
-
-  .input button {
-    width: 332px;
+  textarea {
+    height: 59.7rem;
   }
 
   .buttons {
+    flex-direction: row;
     justify-content: center;
   }
 
   .output {
-    max-width: 100%;
-    padding: 32px;
+    max-width: 68.8rem;
   }
-
-  .output h1 {
-    padding: 0;
-  }
-
-  .output img {
-    display: none;
-  }
-
 }
 
-@media (max-width: 375px){
-  .container {
-    flex-direction: column;
-    height: 100vh;
-    padding: 73.42px 40px 40px;
-  }
-  
-  .input {
-    max-width: 100%;
+@media only screen and (min-width: 1440px) {
+  main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100% ;
-    grid-template-areas: "form form";
+    grid-template-columns: 3.109rem 68rem 40rem; 
+    grid-template-areas: "header aside" "form aside";
   }
 
-  .input div {
-    flex-direction: column;
+  header {
+    grid-area: header;
   }
 
-  .container form {
-    width: 100%;
-    margin-top: 120.21px;
-  }
-
-  .input textarea {
-    height: 596px;
-  }
-
-  .input button {
-    width: 332px;
-  }
-
-  .buttons {
-    justify-content: center;
+  form {
+    grid-area: form;
   }
 
   .output {
-    max-width: 100%;
-    padding: 32px;
+    grid-area: aside;
   }
-
-  .output h1 {
-    padding: 0;
-  }
-
-  .output img {
-    display: none;
-  }
-
 }
