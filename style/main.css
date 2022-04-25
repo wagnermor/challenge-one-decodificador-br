@@ -108,7 +108,11 @@ small {
 }
 
 @media only screen and (min-width: 934px) {
+  body{
+    background-color: #E5E5E5;
+  }
   main {
+    margin: 0 auto;
     max-width: 144rem;
     height: 100vh;
     display: flex;
