@@ -1,3 +1,4 @@
+const imgAluraLogoRef = document.getElementById("alura-logo")
 const btnEncryptRef = document.getElementById("btn-encrypt")
 const btnDecryptRef = document.getElementById("btn-decrypt")
 const btnCopytRef = document.getElementById("btn-copy")
@@ -36,6 +37,8 @@ async function copy() {
   await navigator.clipboard.writeText(content)
   textarea.value = pRef.innerHTML
 }
+
+imgAluraLogoRef.addEventListener("click", () => location.reload())
 
 formRef.addEventListener("click", event => event.preventDefault())
 
