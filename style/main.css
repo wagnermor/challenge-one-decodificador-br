@@ -127,7 +127,7 @@ small {
   }
 }
 
-@media only screen and (min-width: 934px) {
+@media only screen and (min-width: 1000px) {
   body{
     background-color: #E5E5E5;
   }
@@ -138,37 +138,25 @@ small {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* gap: 4rem; */
     padding: 4rem;
-    /* display: grid; */
-    /* grid-template-columns: 3.109rem 68rem 40rem;  */
-    /* grid-template-areas: "header aside" "form aside"; */
   }
 
   header {
-    /* max-width: 4rem; */
-    /* margin: 0 12.491rem 0 8.4rem ; */
     margin: 0;
-    /* margin: 0 9.491% 0 8.4rem ; */
   }
 
   form {
-    /* max-width: 68.4rem; */
     max-width: 50%;
-    /* height: 81.6rem; */
-    margin-top: 16.8rem;
+    margin-top: 7%;
   }
 
   textarea {
-    /* max-height: 68.4rem; */
     height: 54vh;
   }
 
   .buttons {
     width: 100%;
-    /* flex-direction: row; */
     margin-bottom: 0;
-    /* flex-flow: row wrap; */
   }
 
   button {
@@ -186,15 +174,14 @@ small {
     max-height: 100%;
     margin-left: 0;
     margin-right: 0;
-    /* box-sizing: border-box; */
   }
-  
+
   .button-output {
     width: 100%;
   }
 
   .img-output {
     display: inline-block;
-    margin: 24.3rem 0 3.2rem;
+    margin-top: 30%;
   }
 }
