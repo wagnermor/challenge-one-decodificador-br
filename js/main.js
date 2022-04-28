@@ -6,9 +6,6 @@ const asideDivContentRef = document.getElementById("output")
 const pRef = document.getElementById("p-output")
 
 const formRef = document.querySelector("form")
-console.log(formRef)
-formRef.addEventListener("click", event => event.preventDefault())
-// const pRef = document.getElementById("p-output")
 
 function encrypt(string) {
   let encrypted = []
@@ -28,7 +25,7 @@ function decrypt(string) {
   let decrypted = []// join and split
   for(let word of string.split(' ')) {
     word = word.replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a")
-      .replace(/ober/g, "o").replace(/ufat/g, "u")
+    .replace(/ober/g, "o").replace(/ufat/g, "u")
     decrypted.push(word)
   }
   return decrypted.join(' ')
@@ -39,13 +36,9 @@ async function copy() {
   await navigator.clipboard.writeText(content)
 }
 
-async function clearTextarea() {
-  await textareaRef.value == ''?
-    asideDivContentRef.style.visibility="visible" : console.log('nada nada')
-}
+formRef.addEventListener("click", event => event.preventDefault())
 
 btnEncryptRef.addEventListener("click", event => {
-  // event.preventDefault()
   textareaRef.value.toLowerCase()
   textareaRef.value.trim()
   if(textareaRef.value !== '') {
@@ -61,8 +54,8 @@ btnEncryptRef.addEventListener("click", event => {
 })
 
 btnDecryptRef.addEventListener("click", event =>{
-  // event.preventDefault()
   if(textarea.value) pRef.innerHTML = `${decrypt(textarea.value)}`
+    else alert('Digite um texto')
   textareaRef.value=''
   textareaRef.focus()
 })
@@ -72,4 +65,3 @@ btnCopytRef.addEventListener("click", () => {
   copy()
   textareaRef.focus()
 })
-textarea.addEventListener("onkeyUp", clearTextarea)
