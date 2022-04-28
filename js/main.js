@@ -34,6 +34,7 @@ function decrypt(string) {
 async function copy() {
   const content = pRef.innerHTML
   await navigator.clipboard.writeText(content)
+  textarea.value = pRef.innerHTML
 }
 
 formRef.addEventListener("click", event => event.preventDefault())
