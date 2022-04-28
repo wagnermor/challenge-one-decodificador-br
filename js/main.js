@@ -1,7 +1,13 @@
 const btnEncryptRef = document.getElementById("btn-encrypt")
 const btnDecryptRef = document.getElementById("btn-decrypt")
+const btnCopytRef = document.getElementById("btn-copy")
 const textareaRef = document.getElementById("textarea")
-const asideRef = document.getElementById("output")
+const asideDivContentRef = document.getElementById("output")
+const pRef = document.getElementById("p-output")
+
+const formRef = document.querySelector("form")
+console.log(formRef)
+formRef.addEventListener("click", event => event.preventDefault())
 // const pRef = document.getElementById("p-output")
 
 function encrypt(string) {
@@ -29,22 +35,41 @@ function decrypt(string) {
 }
 
 async function copy() {
-  const content = document.getElementById("p-output").innerHTML
+  const content = pRef.innerHTML
   await navigator.clipboard.writeText(content)
 }
 
+async function clearTextarea() {
+  await textareaRef.value == ''?
+    asideDivContentRef.style.visibility="visible" : console.log('nada nada')
+}
+
 btnEncryptRef.addEventListener("click", event => {
-  event.preventDefault()
+  // event.preventDefault()
   textareaRef.value.toLowerCase()
   textareaRef.value.trim()
   if(textareaRef.value !== '') {
-    asideRef.innerHTML = `<p id="p-output" style="text-align:left">${encrypt(textareaRef.value)}</p>`
+    pRef.innerHTML = `${encrypt(textareaRef.value)}`
+    asideDivContentRef.classList.add("display-none")
+    pRef.classList.remove("display-none")
+    btnCopytRef.style.display = "inline-block"
+    textareaRef.value=''
+    textareaRef.focus()
   } else {
     alert('Digite um texto')
   }
 })
 
 btnDecryptRef.addEventListener("click", event =>{
-  event.preventDefault()
-  if(textarea.value) asideRef.innerHTML = `<p id="p-output"> ${decrypt(textarea.value)}</p>`
+  // event.preventDefault()
+  if(textarea.value) pRef.innerHTML = `${decrypt(textarea.value)}`
+  textareaRef.value=''
+  textareaRef.focus()
 })
+
+
+btnCopytRef.addEventListener("click", () => {
+  copy()
+  textareaRef.focus()
+})
+textarea.addEventListener("onkeyUp", clearTextarea)
