@@ -32,21 +32,18 @@ function decrypt(string) {
   return decrypted.join(' ')
 }
 
-async function copy() {
-  const content = pRef.innerHTML
-  await navigator.clipboard.writeText(content)
-  textarea.value = pRef.innerHTML
+function isEncrypt(string) {
+  return /enter|imes|ai|ober|ufat/g.test(string)
 }
 
-imgAluraLogoRef.addEventListener("click", () => location.reload())
+async function copy(content) {
+  await navigator.clipboard.writeText(content)
+  textarea.value = content
+}
 
-formRef.addEventListener("click", event => event.preventDefault())
-
-btnEncryptRef.addEventListener("click", event => {
-  textareaRef.value.toLowerCase()
-  textareaRef.value.trim()
+function printOutput(text) {
   if(textareaRef.value !== '') {
-    pRef.innerHTML = `${encrypt(textareaRef.value)}`
+    pRef.innerHTML = text
     asideDivContentRef.classList.add("display-none")
     pRef.classList.remove("display-none")
     btnCopytRef.style.display = "inline-block"
@@ -55,17 +52,32 @@ btnEncryptRef.addEventListener("click", event => {
   } else {
     alert('Digite um texto')
   }
+}
+
+imgAluraLogoRef.addEventListener("click", () => location.reload())
+formRef.addEventListener("click", event => event.preventDefault())
+
+btnEncryptRef.addEventListener("click", () => {
+  textareaRef.value.toLowerCase()
+  textareaRef.value.trim()
+
+  isEncrypt(textareaRef.value) ? 
+    alert("Texto já criptografado, primeiro clique em descriptografar") : 
+    printOutput(encrypt(textareaRef.value))
+  
 })
 
-btnDecryptRef.addEventListener("click", event =>{
-  if(textarea.value) pRef.innerHTML = `${decrypt(textarea.value)}`
-    else alert('Digite um texto')
-  textareaRef.value=''
-  textareaRef.focus()
+btnDecryptRef.addEventListener("click", () =>{
+  textareaRef.value.toLowerCase()
+  textareaRef.value.trim()
+
+  !isEncrypt(textareaRef.value) ?
+    alert("Texto já descriptografado, primeiro clique em criptografar") : 
+    printOutput(decrypt(textareaRef.value))
 })
 
 
 btnCopytRef.addEventListener("click", () => {
-  copy()
+  copy(pRef.innerHTML)
   textareaRef.focus()
 })
