@@ -9,7 +9,8 @@
   * [X] Função para criptografia;
   * [X] Função para descriptografia;
   * [X] Botão copiar (memória do navegador);
-  * [X] Alimentar input automaticamente com conteúdo copiado através do botão copiar;
+  * [X] Alimentar textarea automaticamente com conteúdo copiado através do botão copiar;
   * [X] Validação para saber se o texto está criptografado ao clicar no botão criptografar;
   * [X] Validação para saber se o texto está descriptografado ao clicar no botão descriptografar;
+  * [X] Validação para saber se há texto digitado;
   * [X] Repositório github.
